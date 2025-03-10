@@ -6,7 +6,7 @@ import os
 import tempfile
 
 def crc32_to_hex( crc ):
-	ulong = long(crc)
+	ulong = int(crc)
 	if( ulong < 0 ):
 		ulong = ulong + 2**32
 	hex_ulong = hex(ulong)[2:].upper()
