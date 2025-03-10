@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 from geocache import *
 from xml.parsers import expat
 from copy import deepcopy
@@ -65,7 +65,7 @@ class GchParser:
 		try:
 			self._gch.size = self._gs_container_size_map[text.lower()]
 		except KeyError:
-			print "Warning:Don't know how to handle size of '" + text + "' on cache '" + self._gch.name + "'";
+			print("Warning:Don't know how to handle size of '" + text + "' on cache '" + self._gch.name + "'");
 			self._gch.size = -1.0
 
 	def _handle_name(self,text,ebi):
@@ -173,7 +173,7 @@ class GpxParser:
 		if( tag == "wpt" ):
 			self._mode = "wpt"
 
-		self._textbuffer=u""
+		self._textbuffer=""
 		if( self._mode == "wpt" ):
 			self._gch_parser.start( tag_key, attrs, self._parser.CurrentByteIndex )
 		else:

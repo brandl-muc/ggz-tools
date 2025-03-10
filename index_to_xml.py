@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 from index import *
 from xml.sax.saxutils import escape
 import codecs
@@ -6,7 +6,7 @@ import os
 import tempfile
 
 def crc32_to_hex( crc ):
-	ulong = long(crc)
+	ulong = int(crc)
 	if( ulong < 0 ):
 		ulong = ulong + 2**32
 	hex_ulong = hex(ulong)[2:].upper()
@@ -68,7 +68,7 @@ def index_to_xml( index ):
 	x.OpenTag( "ggz" )
 	for f in index.filelist:
 		x.OpenTag( "file" )
-		x.OpenTagCloseTag( "name", f.name.decode('utf-8') )
+		x.OpenTagCloseTag( "name", f.name )
 		x.OpenTagCloseTag( "crc", crc32_to_hex( f.crc ) )
 		for g in f.cachelist:
 			x.entry( g )
