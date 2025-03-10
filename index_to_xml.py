@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 from index import *
 from xml.sax.saxutils import escape
 import codecs

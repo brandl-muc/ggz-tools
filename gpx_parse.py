@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 from geocache import *
 from xml.parsers import expat
 from copy import deepcopy
